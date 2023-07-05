@@ -21,6 +21,6 @@ app.listen(3000,async () =>{
     // const comment = await Comment.create({ content: 'new Comment-2'});
     // tweet.comments.push(comment);
     // await tweet.save();
-    const tweet = await tweetrepo.getwithcomment('64a507d2ebcfb40be3628244');
-    console.log(tweet);
+    const tweet = await tweetrepo.getall(0,3);
+    console.log(tweet[0].contentWithEmail);
 });

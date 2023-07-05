@@ -15,6 +15,10 @@ const tweetschema =new mongoose.Schema({
         }
     ]
 },{timestamps: true});
+
+tweetschema.virtual('contentWithEmail').get(function process(){
+    return this.content+"\nCreated by:"+this.userEmail;
+})
 // model -- actual instances using which we connect to database.
 const Tweet = mongoose.model('Tweet', tweetschema);
 module.exports =Tweet;
