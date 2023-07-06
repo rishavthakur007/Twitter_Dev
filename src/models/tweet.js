@@ -1,4 +1,4 @@
-const mongoose= require('mongoose');
+import mongoose from "mongoose";
 // schema -- blueprint
 const tweetschema =new mongoose.Schema({
     content: {
@@ -18,4 +18,4 @@ const tweetschema =new mongoose.Schema({
 
 // model -- actual instances using which we connect to database.
 const Tweet = mongoose.model('Tweet', tweetschema);
-module.exports =Tweet;
+export default Tweet;
